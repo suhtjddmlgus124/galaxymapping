@@ -1,0 +1,19 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+
+// 기본 폰트 변경
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+$font-family-base: 'Noto Sans KR', 'sans-serif';
+
+
+// 색상
+$custom-colors: (
+    "sasadark": #013B84,
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
