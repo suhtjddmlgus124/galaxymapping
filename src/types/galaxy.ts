@@ -1,8 +1,8 @@
 export interface Galaxy {
     id: number;
-    name: string;
+    name: string;    
     photo: string;
+    metadata: string;
     spectrum: string;
-    camera: string;
     dateTime: string;
 }
