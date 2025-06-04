@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { OrbitControls } from "three/examples/jsm/Addons.js";
+import galaxies from "../db/galaxies";
 
 interface StarData {
   ra: number; // Right Ascension in hours
@@ -83,13 +84,22 @@ const GalaxyMap: React.FC = () => {
     const starGroup = new THREE.Group();
     scene.add(starGroup);
 
-    addStar({
-      ra: 13.5, // 적경(RA) 시간 단위
-      dec: 202.5, // 적위(Dec) 도 단위
-      distance: 3.1, // 1000만광년 == 1
-      name: "M51",
-      url: "https://www.kasi.re.kr/kor/publication/post/photoGallery/4493",
+    galaxies.forEach((galaxy) => {
+      addStar({
+        ra: galaxy.ra,
+        dec: galaxy.dec,
+        distance: galaxy.distance,
+        name: galaxy.name,
+        url: `/galaxy/${galaxy.id}/`
+      })
     });
+    // addStar({
+    //   ra: 13.5, // 적경(RA) 시간 단위
+    //   dec: 202.5, // 적위(Dec) 도 단위
+    //   distance: 3.1, // 1000만광년 == 1
+    //   name: "M51",
+    //   url: "https://www.kasi.re.kr/kor/publication/post/photoGallery/4493",
+    // });
     
 
     // Tooltip DOM

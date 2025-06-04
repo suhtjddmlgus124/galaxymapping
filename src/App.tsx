@@ -12,11 +12,14 @@ function GalaxyRoutes() {
     )
 }
 
+import GalaxyMap from "./routes/Mapping";
+
 export default function App() {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/galaxy/*" element={<GalaxyRoutes/>}/>
+                <Route path="/mapping/" element={<GalaxyMap/>}/>
             </Routes>
         </BrowserRouter>
     );
