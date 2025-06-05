@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 
 import GalaxyList from "./routes/galaxy/GalaxyList";
@@ -12,15 +12,17 @@ function GalaxyRoutes() {
     )
 }
 
+import Index from "./routes/Index";
 import GalaxyMap from "./routes/Mapping";
 
 export default function App() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
+                <Route path="/" element={<Index/>}/>
                 <Route path="/galaxy/*" element={<GalaxyRoutes/>}/>
                 <Route path="/mapping/" element={<GalaxyMap/>}/>
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
