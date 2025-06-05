@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
 import galaxies from "../db/galaxies";
@@ -20,6 +21,7 @@ interface StarData {
  */
 const GalaxyMap: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const container = mountRef.current;
@@ -170,7 +172,7 @@ const GalaxyMap: React.FC = () => {
       const hits = raycaster.intersectObjects(starGroup.children);
       if (hits.length > 0) {
         const url = hits[0].object.userData.url;
-        window.open(url, "_blank");
+        navigate(url);
       }
     };
     renderer.domElement.addEventListener("pointermove", onPointerMove);
