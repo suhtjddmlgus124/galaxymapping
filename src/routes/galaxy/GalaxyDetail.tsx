@@ -17,7 +17,7 @@ function GalaxyDisplay({ galaxy }: { galaxy: Galaxy }) {
                         </tr>
                         <tr>
                             <td className="text-center">
-                                <Image fluid src={galaxy.photo} style={{width: "100%", height: "100%", objectFit: "contain"}} />
+                                <Image fluid src={`${import.meta.env.BASE_URL}${galaxy.photo}`} style={{width: "100%", height: "100%", objectFit: "contain"}} />
                             </td>
                         </tr>
                         <tr className="table-dark">
@@ -25,7 +25,7 @@ function GalaxyDisplay({ galaxy }: { galaxy: Galaxy }) {
                         </tr>
                         <tr>
                             <td className="text-center">
-                                <Image fluid src={galaxy.spectrum} />
+                                <Image fluid src={`${import.meta.env.BASE_URL}${galaxy.spectrum}`} />
                             </td>
                         </tr>
                     </tbody>

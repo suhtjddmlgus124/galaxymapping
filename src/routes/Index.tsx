@@ -4,8 +4,8 @@ import { Link } from "react-router-dom"
 export default function Index() {
     return (
         <Container className="my-3">
-            <Link to="/mapping/">매핑</Link>
-            <Link to="/galaxy/">은하 목록</Link>
+            <Link to="/mapping/" className="btn btn-sasadark">매핑</Link>
+            <Link to="/galaxy/" className="btn btn-sasadark">은하 목록</Link>
         </Container>
     )
 }
