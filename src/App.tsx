@@ -1,5 +1,5 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
-
+import Sidebar from "./components/Sidebar";
 
 import GalaxyList from "./routes/galaxy/GalaxyList";
 import GalaxyDetail from "./routes/galaxy/GalaxyDetail";
@@ -18,11 +18,18 @@ import GalaxyMap from "./routes/Mapping";
 export default function App() {
     return (
         <HashRouter>
-            <Routes>
-                <Route path="/" element={<Index/>}/>
-                <Route path="/galaxy/*" element={<GalaxyRoutes/>}/>
-                <Route path="/mapping/" element={<GalaxyMap/>}/>
-            </Routes>
+            <div className="d-flex">
+                <div style={{width: "17rem"}}>
+                    <Sidebar/>
+                </div>
+                <div className="flex-grow-1">
+                    <Routes>
+                        <Route path="/" element={<Index/>}/>
+                        <Route path="/galaxy/*" element={<GalaxyRoutes/>}/>
+                        <Route path="/mapping/" element={<GalaxyMap/>}/>
+                    </Routes>
+                </div>
+            </div>
         </HashRouter>
     );
 }
