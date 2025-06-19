@@ -16,6 +16,9 @@ export default function Sidebar() {
                     <ListGroup.Item>
                         <Nav.Link to="/galaxy/" as={Link}>은하 목록</Nav.Link>
                     </ListGroup.Item>
+                    <ListGroup.Item>
+                        <Nav.Link to="/contributor/" as={Link}>제작자</Nav.Link>
+                    </ListGroup.Item>
                 </Nav>
             </Offcanvas.Body>
         </Offcanvas>

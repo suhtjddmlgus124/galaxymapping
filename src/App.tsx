@@ -12,9 +12,8 @@ function GalaxyRoutes() {
     )
 }
 
-// import Index from "./routes/Index";
 import GalaxyMap from "./routes/Mapping";
-// import Footer from "./components/Footer";
+import Contributor from "./routes/Contributor";
 
 export default function App() {
     return (
@@ -26,8 +25,9 @@ export default function App() {
                 <div className="flex-grow-1">
                     <Routes>
                         <Route path="/" element={<Navigate to="/mapping/"/>}/>
-                        <Route path="/galaxy/*" element={<GalaxyRoutes/>}/>
                         <Route path="/mapping/" element={<GalaxyMap/>}/>
+                        <Route path="/galaxy/*" element={<GalaxyRoutes/>}/>
+                        <Route path="/contributor/" element={<Contributor/>}/>
                     </Routes>
                 </div>
             </div>
