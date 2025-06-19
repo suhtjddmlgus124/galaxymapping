@@ -10,7 +10,7 @@ function TableRow({ galaxy }: TableRowProps) {
     const navigate = useNavigate();
 
     return (
-        <tr onClick={() => {navigate(`/galaxy/${galaxy.id}/`)}}>
+        <tr onClick={() => {navigate(`/galaxy/${galaxy.id}/`)}} className="user-select-none">
             <td>{galaxy.name}</td>
         </tr>
     )

@@ -66,15 +66,15 @@ function GalaxyInfoDisplay({ galaxy }: { galaxy: Galaxy }) {
                         </tr>
                         <tr>
                             <th>문헌값</th>
-                            <td>{galaxy.reportedDistance} Mpc</td>
+                            <td>{galaxy.reportedDistance}</td>
                         </tr>
                         <tr>
                             <th>관측값</th>
-                            <td>{galaxy.measuredDistance} Mpc</td>
+                            <td>{galaxy.measuredDistance!==-1 ? `${galaxy.measuredDistance} Mpc` : "계산 불가"}</td>
                         </tr>
                         <tr>
                             <th>상대 오차</th>
-                            <td>{ ((galaxy.measuredDistance-galaxy.reportedDistance)/galaxy.reportedDistance * 100).toFixed(2) } %</td>
+                            <td>{ galaxy.measuredDistance!==-1 ? `${((galaxy.measuredDistance-galaxy.reportedDistance)/galaxy.reportedDistance * 100).toFixed(2)} %` : "계산 불가" }</td>
                         </tr>
 
                         <tr className="table-dark">

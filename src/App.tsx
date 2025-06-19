@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 
 import GalaxyList from "./routes/galaxy/GalaxyList";
@@ -12,8 +12,9 @@ function GalaxyRoutes() {
     )
 }
 
-import Index from "./routes/Index";
+// import Index from "./routes/Index";
 import GalaxyMap from "./routes/Mapping";
+// import Footer from "./components/Footer";
 
 export default function App() {
     return (
@@ -24,7 +25,7 @@ export default function App() {
                 </div>
                 <div className="flex-grow-1">
                     <Routes>
-                        <Route path="/" element={<Index/>}/>
+                        <Route path="/" element={<Navigate to="/mapping/"/>}/>
                         <Route path="/galaxy/*" element={<GalaxyRoutes/>}/>
                         <Route path="/mapping/" element={<GalaxyMap/>}/>
                     </Routes>

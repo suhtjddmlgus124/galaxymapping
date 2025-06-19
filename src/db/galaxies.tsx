@@ -15,10 +15,10 @@ const galaxies: Galaxy[] = [
         reportedDistance: 3.1,
         measuredDistance: 13.90,
         // 적색편이량 문헌값, 측정값
-        reportedRedshift: 0,
+        reportedRedshift: 0.001534,
         measuredRedshift: 0.0032,
         // 후퇴 속도 문헌값, 측정값 (km/s)
-        reportedRecessionVelocity: 0,
+        reportedRecessionVelocity: 463,
         measuredRecessionVelocity: 972.78, 
     },
     {
@@ -27,19 +27,19 @@ const galaxies: Galaxy[] = [
         ra: 9.93,
         dec: 69.07,
         photo: "/photo/M81_photo.webp",
-        metadata: "",
+        metadata: "1Bin, 1200s x 6ea",
         spectrum: "/spectrum/M81_spectrum.png",
-        dateTime: "2025년 6월",
+        dateTime: "2025년 6월 5일 00시 9분 ~ 2025년 6월 5일 02시 16분",
 
         
         // 거리 문헌값, 측정값 (Mpc)
         reportedDistance: 3.62,
-        measuredDistance: 0,
+        measuredDistance: -1,
         // 적색편이량 문헌값, 측정값
-        reportedRedshift: 0,
+        reportedRedshift: -0.000113,
         measuredRedshift: -0.0004,
         // 후퇴 속도 문헌값, 측정값 (km/s)
-        reportedRecessionVelocity: 0,
+        reportedRecessionVelocity: -34,
         measuredRecessionVelocity: -131.34,
         
     },
@@ -51,17 +51,17 @@ const galaxies: Galaxy[] = [
         photo: "/photo/M82_photo.webp",
         metadata: "1Bin, 1200s x 6ea",
         spectrum:"/spectrum/M82_spectrum.png",
-        dateTime: "2025년 6월",
+        dateTime: "2025년 6월 6일 22시 32분 ~ 2025년 6월 7일 00시 17분",
 
         
         // 거리 문헌값, 측정값 (Mpc)
         reportedDistance: 3.65,
         measuredDistance: 3.30,
         // 적색편이량 문헌값, 측정값
-        reportedRedshift: 0,
+        reportedRedshift: 0.000897,
         measuredRedshift: 0.0008,
         // 후퇴 속도 문헌값, 측정값 (km/s)
-        reportedRecessionVelocity: 0,
+        reportedRecessionVelocity: 269,
         measuredRecessionVelocity: 230.81,
     },
     {
@@ -70,19 +70,19 @@ const galaxies: Galaxy[] = [
         ra: 14.05,
         dec: 54.35,
         photo: "/photo/M101_photo.webp",
-        metadata: "1Bin, 1200s x 6ea",
+        metadata: "1Bin, 1200s x 2ea",
         spectrum:"/spectrum/M101_spectrum.png",
-        dateTime: "2025년 6월",
+        dateTime: "2025년 6월 8일 22시 39분 ~ 2025년 6월 8일 23시 05분",
 
         
         // 거리 문헌값, 측정값 (Mpc)
         reportedDistance: 20.9,
         measuredDistance: 9.04,
         // 적색편이량 문헌값, 측정값
-        reportedRedshift: 0,
+        reportedRedshift: 0.000804,
         measuredRedshift: 0.0021,
         // 후퇴 속도 문헌값, 측정값 (km/s)
-        reportedRecessionVelocity: 0,
+        reportedRecessionVelocity: 241,
         measuredRecessionVelocity: 632.81,
     }
 ]
