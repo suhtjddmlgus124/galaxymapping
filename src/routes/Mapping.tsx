@@ -90,7 +90,7 @@ const GalaxyMap: React.FC = () => {
       addStar({
         ra: galaxy.ra,
         dec: galaxy.dec,
-        distance: galaxy.distance,
+        distance: galaxy.reportedDistance,
         name: galaxy.name,
         url: `/galaxy/${galaxy.id}/`
       })

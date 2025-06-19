@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
 import galaxies from "../../db/galaxies";
 import common from "../../db/common";
+import { convertHourToHourMinuteSecond } from "../../utils/convert";
 import type { Galaxy } from "../../types/galaxy";
 import { Container, Row, Col, Card, Table, Image } from "react-bootstrap";
 
 
-function GalaxyDisplay({ galaxy }: { galaxy: Galaxy }) {
+function GalaxyPhotoDisplay({ galaxy }: { galaxy: Galaxy }) {
     return (
         <Card className="mb-3">
             <Card.Header className="fs-5 fw-bold">사진</Card.Header>
@@ -27,6 +28,85 @@ function GalaxyDisplay({ galaxy }: { galaxy: Galaxy }) {
                             <td className="text-center">
                                 <Image fluid src={`${import.meta.env.BASE_URL}${galaxy.spectrum}`} />
                             </td>
+                        </tr>
+                    </tbody>
+                </Table>
+            </Card.Body>
+        </Card>
+    );
+}
+
+function GalaxyInfoDisplay({ galaxy }: { galaxy: Galaxy }) {
+    const { hour, minute, second } = convertHourToHourMinuteSecond(galaxy.ra);
+
+    return (
+        <Card className="mb-3">
+            <Card.Header className="fs-5 fw-bold">은하 정보</Card.Header>
+            <Card.Body>
+                <Table>
+                    <colgroup>
+                        <col width="15%"/>
+                        <col width="85%"/>
+                    </colgroup>
+                    <tbody>
+                        <tr className="table-dark">
+                            <th colSpan={2}>위치</th>
+                        </tr>
+                        <tr>
+                            <th>적위</th>
+                            <td>{hour}h {minute}m {second}s</td>
+                        </tr>
+                        <tr>
+                            <th>적경</th>
+                            <td>{galaxy.dec}°</td>
+                        </tr>
+
+                        <tr className="table-dark">
+                            <th colSpan={2}>거리</th>
+                        </tr>
+                        <tr>
+                            <th>문헌값</th>
+                            <td>{galaxy.reportedDistance} Mpc</td>
+                        </tr>
+                        <tr>
+                            <th>관측값</th>
+                            <td>{galaxy.measuredDistance} Mpc</td>
+                        </tr>
+                        <tr>
+                            <th>상대 오차</th>
+                            <td>{ ((galaxy.measuredDistance-galaxy.reportedDistance)/galaxy.reportedDistance * 100).toFixed(2) } %</td>
+                        </tr>
+
+                        <tr className="table-dark">
+                            <th colSpan={2}>적색 편이량</th>
+                        </tr>
+                        <tr>
+                            <th>문헌값</th>
+                            <td>{galaxy.reportedRedshift}</td>
+                        </tr>
+                        <tr>
+                            <th>관측값</th>
+                            <td>{galaxy.measuredRedshift}</td>
+                        </tr>
+                        <tr>
+                            <th>상대 오차</th>
+                            <td>{ ((galaxy.measuredRedshift-galaxy.reportedRedshift)/galaxy.reportedRedshift * 100).toFixed(2) } %</td>
+                        </tr>
+
+                        <tr className="table-dark">
+                            <th colSpan={2}>후퇴 속도</th>
+                        </tr>
+                        <tr>
+                            <th>문헌값</th>
+                            <td>{galaxy.reportedRecessionVelocity} km/s</td>
+                        </tr>
+                        <tr>
+                            <th>관측값</th>
+                            <td>{galaxy.measuredRecessionVelocity} km/s</td>
+                        </tr>
+                        <tr>
+                            <th>상대 오차</th>
+                            <td>{ ((galaxy.measuredRecessionVelocity-galaxy.reportedRecessionVelocity)/galaxy.reportedRecessionVelocity * 100).toFixed(2) } %</td>
                         </tr>
                     </tbody>
                 </Table>
@@ -127,11 +207,12 @@ export default function GalaxyDetail() {
             
             <Row className="g-3">
                 <Col className="col-12 col-lg-6">
-                    <GalaxyDisplay galaxy={galaxy} />
+                    <GalaxyPhotoDisplay galaxy={galaxy} />
+                    <ShootInformationDisplay galaxy={galaxy} />
                 </Col>
 
                 <Col className="col-12 col-lg-6">
-                    <ShootInformationDisplay galaxy={galaxy} />
+                    <GalaxyInfoDisplay galaxy={galaxy}/>
                     <TelescopeDisplay />
                 </Col>
             </Row>
